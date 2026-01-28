@@ -5,5 +5,4 @@ allure-report/
 playwright-report/
 reports/
 test-results/
-package-lock.json
 .vscode/
