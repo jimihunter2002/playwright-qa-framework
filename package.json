@@ -1,0 +1,24 @@
+{
+  "name": "qa-novatus-framework",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --project=UI-Tests",
+    "test:api": "playwright test --project=API-Tests",
+    "test:all": "npm run test:ui && npm run test:api",
+    "allure:clear": "rimraf allure-results allure-report",
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report",
+    "posttest": "npm run allure:generate && (process.env.CI || npm run allure:open)"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.41.0",
+    "ajv": "^8.12.0",
+    "allure-commandline": "^2.36.0",
+    "allure-js-commons": "^3.4.5",
+    "allure-playwright": "^3.4.5",
+    "dotenv": "^17.2.3",
+    "rimraf": "^6.1.2",
+    "typescript": "^5.2.0"
+  }
+}
